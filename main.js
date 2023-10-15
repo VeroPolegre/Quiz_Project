@@ -10,15 +10,41 @@ const questionsDiv = document.getElementById("questions");
 const resultsDiv = document.getElementById("results");
 const friendsDiv = document.getElementById("friends");
 
-function goProfile() {
+function hideViews() {
   homeDiv.classList.add("hidden");
-  profileDiv.classList.remove("hidden");
+  profileDiv.classList.add("hidden");
+  questionsDiv.classList.add("hidden");
+  resultsDiv.classList.add("hidden");
+  friendsDiv.classList.add("hidden");
 }
 
 function goHome() {
+  hideViews();
   homeDiv.classList.remove("hidden");
-  profileDiv.classList.add("hidden");
+}
+
+function goProfile() {
+  hideViews();
+  profileDiv.classList.remove("hidden");
+}
+
+function goQuestions() {
+  hideViews();
+  questionsDiv.classList.remove("hidden");
+}
+
+function goResults() {
+  hideViews();
+  resultsDiv.classList.remove("hidden");
+}
+
+function goFriends() {
+  hideViews();
+  friendsDiv.classList.remove("hidden");
 }
 
 profileNav.addEventListener("click", goProfile);
 homeNav.addEventListener("click", goHome);
+questionsNav.addEventListener("click", goQuestions);
+resultsNav.addEventListener("click", goResults);
+friendsNav.addEventListener("click", goFriends);
