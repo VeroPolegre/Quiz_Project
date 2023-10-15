@@ -11,7 +11,14 @@ const resultsDiv = document.getElementById("results");
 const friendsDiv = document.getElementById("friends");
 
 function goProfile() {
-  console.log("Voy a profile");
+  homeDiv.classList.add("hidden");
+  profileDiv.classList.remove("hidden");
+}
+
+function goHome() {
+  homeDiv.classList.remove("hidden");
+  profileDiv.classList.add("hidden");
 }
 
 profileNav.addEventListener("click", goProfile);
+homeNav.addEventListener("click", goHome);
