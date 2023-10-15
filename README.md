@@ -6,21 +6,21 @@ The Quiz will consist of 10 questions. Each question have 4 options and only one
 
 Questions come from https://opentdb.com/
 
-## Objectives
+## ⚡ Objectives 
 - Dynamic manipulation of the DOM.
 - Creation of a SPA page for questions.
 - Asynchrony, using Questions API.
 - Improve and practice knowledge in Git
 - Readme with explanation of the project.
 
-## About the development
+ ## 🖋️ About the development
 
-## Technologies used
+ ## 🔧 Technologies used
 
 | HTML | CSS | JS |
 
 
-### Preview
+ ## 📱 Preview
 
 General overview:
 
@@ -28,7 +28,7 @@ General overview:
 Adaptive design test:
 
 
-## You can check it here!
+ ## ⭐️ You can check it here!
 
 
 Developed by [Vero Polegre](https://github.com/VeroPolegre)
