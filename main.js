@@ -15,6 +15,8 @@ const nextButton = document.getElementById("next-btn");
 const questionContainer = document.getElementById("question-container");
 const questionElement = document.getElementById("question-element");
 const answerButtons = document.getElementById("answer-buttons");
+
+const questionTitle = document.getElementById("question-title");
 let currentQuestionIndex;
 
 function hideViews() {
