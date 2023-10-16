@@ -15,6 +15,7 @@ const nextButton = document.getElementById("next-btn");
 const questionContainer = document.getElementById("question-container");
 const questionElement = document.getElementById("question-element");
 const answerButtons = document.getElementById("answer-buttons");
+let currentQuestionIndex;
 
 function hideViews() {
   homeDiv.classList.add("hidden");
@@ -78,36 +79,35 @@ function showQuestion(question) {
   answers.push({ text: question.correct_answer, correct: true });
 
   question.incorrect_answers.forEach((answer) => {
-    console.log(question.incorrect_answers);
-    const incorrectButton = document.createElement("button");
-    incorrectButton.innerText = answer;
-    incorrectButton.classList.add("answer-btn");
-    answers.push({ text: answer });
+    answers.push({ text: answer, correct: false });
+  });
+  answers.sort(() => Math.random() - 0.5);
 
-    incorrectButton.addEventListener("click", () => selectAnswer(false));
-    answerButtons.appendChild(incorrectButton);
+  // Create buttons for each answer
+  answers.forEach((answer) => {
+    const button = document.createElement("button");
+    button.innerText = answer.text;
     if (answer.correct) {
-      questions.dataset.correct = true;
-      console.log();
+      button.dataset.correct = "true";
     }
+    button.addEventListener("click", selectAnswer);
+    answerButtons.appendChild(button);
   });
 }
 
 function selectAnswer() {
   Array.from(answerButtons.children).forEach((button) => {
-    setStatusClass(button);
+    setStatusClass(button, button.dataset.correct === "true");
   });
   if (questions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove("hidden");
   } else {
-    //grafica resultados
     startButton.innerText = "Restart";
     startButton.classList.remove("hidden");
   }
 }
-
 function setNextQuestion() {
-  resetState(); //limpiar antes de pintar
+  resetState();
   showQuestion(questions[currentQuestionIndex]);
 }
 
