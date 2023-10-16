@@ -49,13 +49,6 @@ function goFriends() {
   friendsDiv.classList.remove("hidden");
 }
 
-function startGame() {
-  startButton.classList.add("hidden");
-  currentQuestionIndex = 0;
-  questionContainer.classList.remove("hidden");
-  setNextQuestion();
-}
-
 let questions = [];
 axios
   .get(
@@ -66,26 +59,9 @@ axios
   })
   .catch((err) => console.error(err));
 
-function showQuestion(question) {
-  questionElement.innerText = question.question;
-  const answers = [];
-  answers.push({ text: question.correct_answer, correct: true });
-  question.incorrect_answers.forEach((answer) => {
-    answers.push({ text: answer });
-  });
-  console.log(answers);
-  // const button = document.createElement("button");
-  // button.innerText = answers;
-  // if (answer.correct) {
-  //   button.dataset.correct = true;
-  // }
-  // button.addEventListener("click", selectAnswer);
-  // answerButtons.appendChild(button);
-}
-
-function setNextQuestion() {
-  resetState(); //limpiar antes de pintar
-  showQuestion(questions[currentQuestionIndex]);
+function resetState() {
+  nextButton.classList.add("hidden");
+  answerButtons.innerHTML = "";
 }
 
 function setStatusClass(element) {
@@ -94,6 +70,27 @@ function setStatusClass(element) {
   } else {
     element.classList.add("wrong");
   }
+}
+//
+function showQuestion(question) {
+  const answers = [];
+  questionElement.innerText = question.question;
+  answers.push({ text: question.correct_answer, correct: true });
+
+  question.incorrect_answers.forEach((answer) => {
+    console.log(question.incorrect_answers);
+    const incorrectButton = document.createElement("button");
+    incorrectButton.innerText = answer;
+    incorrectButton.classList.add("answer-btn");
+    answers.push({ text: answer });
+
+    incorrectButton.addEventListener("click", () => selectAnswer(false));
+    answerButtons.appendChild(incorrectButton);
+    if (answer.correct) {
+      questions.dataset.correct = true;
+      console.log();
+    }
+  });
 }
 
 function selectAnswer() {
@@ -109,19 +106,27 @@ function selectAnswer() {
   }
 }
 
-function resetState() {
-  nextButton.classList.add("hidden");
-  answerButtons.innerHTML = "";
+function setNextQuestion() {
+  resetState(); //limpiar antes de pintar
+  showQuestion(questions[currentQuestionIndex]);
 }
 
-profileNav.addEventListener("click", goProfile);
-homeNav.addEventListener("click", goHome);
-questionsNav.addEventListener("click", goQuestions);
-resultsNav.addEventListener("click", goResults);
-friendsNav.addEventListener("click", goFriends);
+function startGame() {
+  resetState();
+  currentQuestionIndex = 0;
+  startButton.classList.add("hidden");
+  questionContainer.classList.remove("hidden");
+  setNextQuestion();
+}
 
 startButton.addEventListener("click", startGame);
 nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
   setNextQuestion();
 });
+
+homeNav.addEventListener("click", goHome);
+profileNav.addEventListener("click", goProfile);
+questionsNav.addEventListener("click", goQuestions);
+resultsNav.addEventListener("click", goResults);
+friendsNav.addEventListener("click", goFriends);
