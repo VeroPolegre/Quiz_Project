@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz Project</title>
     <link rel="stylesheet" href="style.css" />
-    <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -55,8 +54,17 @@
       </nav>
     </header>
     <main>
+      <div id="question-container" class="hidden">
+        <div id="question-element">Question</div>
+        <div id="answer-buttons"></div>
+      </div>
       <div id="home">
         <h1>Start</h1>
+      </div>
+      <div class="controls">
+        <button id="start-btn">Start</button>
+
+        <button id="next-btn" class="hidden">Next</button>
       </div>
 
       <div id="profile" class="hidden">
