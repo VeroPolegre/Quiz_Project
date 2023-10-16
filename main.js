@@ -74,8 +74,10 @@ function setStatusClass(element) {
     element.classList.add("wrong");
   }
 }
-//
+
 function showQuestion(question) {
+  const questionTitle = document.getElementById("question-title");
+  questionTitle.innerHTML = `Question ${currentQuestionIndex + 1}`;
   const answers = [];
   questionElement.innerText = question.question;
   answers.push({ text: question.correct_answer, correct: true });
