@@ -69,9 +69,9 @@ function resetState() {
 
 function setStatusClass(element) {
   if (element.dataset.correct) {
-    element.classList.add("correct");
+    element.classList.replace("btn-warning", "btn-success");
   } else {
-    element.classList.add("wrong");
+    element.classList.add("btn-danger");
   }
 }
 
@@ -90,6 +90,9 @@ function showQuestion(question) {
   // Create buttons for each answer
   answers.forEach((answer) => {
     const button = document.createElement("button");
+    button.classList.add("btn-warning");
+    button.classList.add("btn");
+
     button.innerText = answer.text;
     if (answer.correct) {
       button.dataset.correct = "true";
@@ -108,6 +111,7 @@ function selectAnswer() {
   } else {
     startButton.innerText = "Restart";
     startButton.classList.remove("d-none");
+    startButton.classList.add("btn-info");
   }
 }
 function setNextQuestion() {

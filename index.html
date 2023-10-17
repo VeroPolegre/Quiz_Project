@@ -11,7 +11,7 @@
     <header>
       <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Greatest quiz in the world</a>
+          <a class="navbar-brand" href="#">Greatest Quiz In The World</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -23,11 +23,7 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div
-            class="navbar-collapse collapse hide"
-            id="navbarColor01"
-            style=""
-          >
+          <div class="navbar-collapse collapse hide" id="navbarColor01">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
                 <a class="nav-link active" id="home-nav"
@@ -64,9 +60,31 @@
     </header>
     <main>
       <div id="home">
-        <h1>Start</h1>
-      </div>
+        <div class="card border-secondary mb-3" style="max-width: 20rem">
+          <div class="card-header">Are you ready?</div>
+          <div class="card-body">
+            <h4 class="card-title">START</h4>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </div>
+          <div id="question-title" class="btn-outline-warning"></div>
+          <div id="question-container" class="d-none">
+            <div id="question-element">Question</div>
+            <div id="answer-buttons"></div>
+          </div>
+          <div class="controls" class="btn btn-outline-info">
+            <button id="start-btn" class="btn btn-outline-warning">
+              Start
+            </button>
 
+            <button id="next-btn" class="d-none btn btn-outline-warning">
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
       <div id="profile" class="d-none">
         <h1>Profile</h1>
       </div>
@@ -80,16 +98,6 @@
       </div>
       <div id="friends" class="d-none">
         <h1>Friends</h1>
-      </div>
-      <div id="question-title"></div>
-      <div id="question-container" class="d-none">
-        <div id="question-element">Question</div>
-        <div id="answer-buttons"></div>
-      </div>
-      <div class="controls">
-        <button id="start-btn">Start</button>
-
-        <button id="next-btn" class="d-none">Next</button>
       </div>
     </main>
     <script
