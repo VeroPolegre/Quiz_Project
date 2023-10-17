@@ -5,51 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz Project</title>
     <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="bootstrap.css" />
   </head>
   <body>
     <header>
-      <nav
-        class="navbar navbar-expand-sm navbar-dark"
-        style="background-color: #fa2929"
-      >
-        <a class="navbar-brand" href="#">Toad Kingdom Quiz</a>
-        <button
-          class="navbar-toggler d-lg-none"
-          type="button"
-          data-toggle="collapse"
-          data-target="#collapsibleNavId"
-          aria-controls="collapsibleNavId"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavId">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <div class="collapse navbar-collapse" id="collapsibleNavId">
-              <li class="nav-item active">
-                <span class="nav-link" id="home-nav">Home</span>
-              </li>
-              <li class="nav-item">
-                <span class="nav-link" id="profile-nav">Profile</span>
-              </li>
-              <li class="nav-item">
-                <span class="nav-link" id="questions-nav">Questions</span>
-              </li>
-              <li class="nav-item">
-                <span class="nav-link" id="results-nav">Results</span>
-              </li>
-              <li class="nav-item">
-                <span class="nav-link" id="friends-nav">Friends</span>
-              </li>
-            </div>
-          </ul>
+      <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Toad Kingdom Quiz</a>
+          <button
+            class="navbar-toggler d-lg-none"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <li class="nav-item active">
+                  <span class="nav-link" id="home-nav">Home</span>
+                </li>
+                <li class="nav-item">
+                  <span class="nav-link" id="profile-nav">Profile</span>
+                </li>
+                <li class="nav-item">
+                  <span class="nav-link" id="questions-nav">Questions</span>
+                </li>
+                <li class="nav-item">
+                  <span class="nav-link" id="results-nav">Results</span>
+                </li>
+                <li class="nav-item">
+                  <span class="nav-link" id="friends-nav">Friends</span>
+                </li>
+              </div>
+            </ul>
+            <form class="d-flex">
+              <input
+                class="form-control me-sm-2"
+                type="search"
+                placeholder="Search"
+              />
+              <button class="btn btn-secondary my-2 my-sm-0" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
         </div>
       </nav>
     </header>
