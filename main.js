@@ -87,11 +87,9 @@ function showQuestion(question) {
   });
   answers.sort(() => Math.random() - 0.5);
 
-  // Create buttons for each answer
   answers.forEach((answer) => {
     const button = document.createElement("button");
-    button.classList.add("btn", "btn-warning");
-
+    button.classList.add("btn", "btn-lg", "btn-warning");
     button.innerHTML = answer.text;
     if (answer.correct) {
       button.dataset.correct = "true";
@@ -110,7 +108,8 @@ function selectAnswer() {
   } else {
     startButton.innerHTML = "Restart";
     startButton.classList.remove("d-none");
-    startButton.classList.add("btn-info");
+    startButton.classList.replace("btn-warning", "btn-info");
+    startButton.classList.replace("btn-outline-warning", "btn-outline-info");
   }
 }
 function setNextQuestion() {
@@ -124,8 +123,9 @@ function startGame() {
   startButton.classList.add("d-none");
   questionContainer.classList.remove("d-none");
   setNextQuestion();
+  homeDiv.classList.add("d-none");
 }
-
+startButton.addEventListener("click", goQuestions);
 startButton.addEventListener("click", startGame);
 nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
@@ -133,7 +133,7 @@ nextButton.addEventListener("click", () => {
 });
 
 homeNav.addEventListener("click", goHome);
-profileNav.addEventListener("click", goProfile);
 questionsNav.addEventListener("click", goQuestions);
 resultsNav.addEventListener("click", goResults);
 scoreboardNav.addEventListener("click", goScoreboard);
+profileNav.addEventListener("click", goProfile);
