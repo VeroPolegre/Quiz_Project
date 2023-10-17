@@ -9,9 +9,14 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Greatest Quiz In The World</a>
+      <nav
+        class="navbar navbar-expand-lg bg-primary justify-content-center ps-3 pe-3"
+        data-bs-theme="dark"
+      >
+        <div class="text-center">
+          <div class="navbar-brand m-0 ps-2 pe-2">
+            Greatest Quiz In The World
+          </div>
           <button
             class="navbar-toggler"
             type="button"
@@ -21,40 +26,40 @@
             aria-expanded="true"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <div class="navbar-toggler-icon"></div>
           </button>
-          <div class="navbar-collapse collapse hide" id="navbarColor01">
-            <ul class="navbar-nav me-auto">
-              <li class="nav-item">
-                <a class="nav-link active" id="home-nav"
-                  >Home
-                  <span class="visually-hidden">(current)</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <span class="nav-link" id="profile-nav">Profile</span>
-              </li>
-              <li class="nav-item">
-                <span class="nav-link" id="questions-nav">Questions</span>
-              </li>
-              <li class="nav-item">
-                <span class="nav-link" id="results-nav">Results</span>
-              </li>
-              <li class="nav-item">
-                <span class="nav-link" id="friends-nav">Friends</span>
-              </li>
-            </ul>
-            <form class="d-flex">
-              <input
-                class="form-control me-sm-2"
-                type="search"
-                placeholder="Search"
-              />
-              <button class="btn btn-secondary my-2 my-sm-0" type="submit">
-                Search
-              </button>
-            </form>
-          </div>
+        </div>
+        <div class="navbar-collapse collapse hide m-0" id="navbarColor01">
+          <ul class="navbar-nav me-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link active" id="home-nav"
+                >Home
+                <span class="visually-hidden">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <span class="nav-link" id="questions-nav">Questions</span>
+            </li>
+            <li class="nav-item">
+              <span class="nav-link" id="results-nav">Results</span>
+            </li>
+            <li class="nav-item">
+              <span class="nav-link" id="scoreboard-nav">Scoreboard</span>
+            </li>
+            <li class="nav-item">
+              <span class="nav-link" id="profile-nav">Profile</span>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input
+              class="form-control me-sm-2"
+              type="search"
+              placeholder="Search"
+            />
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">
+              Search
+            </button>
+          </form>
         </div>
       </nav>
     </header>
@@ -65,6 +70,12 @@
         >
           ARE YOU READY?
         </h4>
+      </section>
+      <section
+        id="questions"
+        class="card border-secondary mb-3"
+        style="width: 100%"
+      >
         <div class="card-body border-secondary m-4">
           <h2 id="question-title" class="text-body"></h2>
           <div id="question-container" class="d-none">
@@ -73,7 +84,6 @@
           </div>
         </div>
       </section>
-
       <div id="question-buttons" class="d-flex justify-content-center">
         <div class="controls" class="btn btn-outline-info">
           <button id="start-btn" class="btn btn-outline-warning">Start</button>
@@ -87,16 +97,12 @@
         <h1>Profile</h1>
       </section>
 
-      <section id="questions" class="d-none">
-        <h1>Questions</h1>
-      </section>
-
       <section id="results" class="d-none">
         <h1>Results</h1>
       </section>
 
-      <section id="friends" class="d-none">
-        <h1>Friends</h1>
+      <section id="scoreboard" class="d-none">
+        <h1>Scoreboard</h1>
       </section>
     </main>
     <script

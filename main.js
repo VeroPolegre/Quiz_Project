@@ -2,13 +2,13 @@ const homeNav = document.getElementById("home-nav");
 const profileNav = document.getElementById("profile-nav");
 const questionsNav = document.getElementById("questions-nav");
 const resultsNav = document.getElementById("results-nav");
-const friendsNav = document.getElementById("friends-nav");
+const scoreboardNav = document.getElementById("scoreboard-nav");
 
 const homeDiv = document.getElementById("home");
 const profileDiv = document.getElementById("profile");
 const questionsDiv = document.getElementById("questions");
 const resultsDiv = document.getElementById("results");
-const friendsDiv = document.getElementById("friends");
+const scoreboardDiv = document.getElementById("scoreboard");
 
 const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
@@ -24,7 +24,7 @@ function hideViews() {
   profileDiv.classList.add("d-none");
   questionsDiv.classList.add("d-none");
   resultsDiv.classList.add("d-none");
-  friendsDiv.classList.add("d-none");
+  scoreboardDiv.classList.add("d-none");
 }
 
 function goHome() {
@@ -47,9 +47,9 @@ function goResults() {
   resultsDiv.classList.remove("d-none");
 }
 
-function goFriends() {
+function goScoreboard() {
   hideViews();
-  friendsDiv.classList.remove("d-none");
+  scoreboardDiv.classList.remove("d-none");
 }
 
 let questions = [];
@@ -136,4 +136,4 @@ homeNav.addEventListener("click", goHome);
 profileNav.addEventListener("click", goProfile);
 questionsNav.addEventListener("click", goQuestions);
 resultsNav.addEventListener("click", goResults);
-friendsNav.addEventListener("click", goFriends);
+scoreboardNav.addEventListener("click", goScoreboard);
