@@ -12,9 +12,10 @@ section {
 }
 
 .navbar-nav .nav-item {
-  font-size: larger;
-  margin-left: 50px;
-  margin-right: 50px;
+  font-size: 1.5rem;
+  padding: 5px;
+  margin-left: 60px;
+  margin-right: 60px;
 }
 
 #question-buttons {
