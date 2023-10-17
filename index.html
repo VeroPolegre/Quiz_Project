@@ -59,32 +59,40 @@
       </nav>
     </header>
     <main>
-      <div id="home">
-        <div class="card border-secondary mb-3" style="max-width: 20rem">
-          <div class="card-header">Are you ready?</div>
+      <div class="box-container" style="width: 100%">
+        <div id="home" class="card border-secondary mb-3" style="width: 100%">
+          <div class="card-header">Maybe it is just a tribute</div>
           <div class="card-body">
-            <h4 class="card-title">START</h4>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-          <div id="question-title" class="btn-outline-warning"></div>
-          <div id="question-container" class="d-none">
-            <div id="question-element">Question</div>
-            <div id="answer-buttons"></div>
-          </div>
-          <div class="controls" class="btn btn-outline-info">
-            <button id="start-btn" class="btn btn-outline-warning">
-              Start
-            </button>
-
-            <button id="next-btn" class="d-none btn btn-outline-warning">
-              Next
-            </button>
+            <h4 class="card-title">ARE YOU READY?</h4>
+            <section id="question-card">
+              <h2
+                id="question-title"
+                class="text-success btn-outline-warning"
+              ></h2>
+              <div id="question-container" class="d-none">
+                <h3
+                  id="question-element"
+                  class="text-success d-flex justify-content-center"
+                >
+                  Question
+                </h3>
+                <span id="answer-buttons"></span>
+              </div>
+            </section>
+            <section id="question-buttons">
+              <div class="controls" class="btn btn-outline-info">
+                <button id="start-btn" class="btn btn-outline-warning">
+                  Start
+                </button>
+                <button id="next-btn" class="d-none btn btn-outline-warning">
+                  Next
+                </button>
+              </div>
+            </section>
           </div>
         </div>
       </div>
+
       <div id="profile" class="d-none">
         <h1>Profile</h1>
       </div>

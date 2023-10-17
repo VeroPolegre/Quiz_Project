@@ -90,8 +90,7 @@ function showQuestion(question) {
   // Create buttons for each answer
   answers.forEach((answer) => {
     const button = document.createElement("button");
-    button.classList.add("btn-warning");
-    button.classList.add("btn");
+    button.classList.add("btn", "btn-warning");
 
     button.innerText = answer.text;
     if (answer.correct) {
