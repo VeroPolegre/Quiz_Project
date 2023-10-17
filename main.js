@@ -79,7 +79,7 @@ function showQuestion(question) {
   const questionTitle = document.getElementById("question-title");
   questionTitle.innerHTML = `Question ${currentQuestionIndex + 1}`;
   const answers = [];
-  questionElement.innerText = question.question;
+  questionElement.innerHTML = question.question;
   answers.push({ text: question.correct_answer, correct: true });
 
   question.incorrect_answers.forEach((answer) => {
@@ -92,7 +92,7 @@ function showQuestion(question) {
     const button = document.createElement("button");
     button.classList.add("btn", "btn-warning");
 
-    button.innerText = answer.text;
+    button.innerHTML = answer.text;
     if (answer.correct) {
       button.dataset.correct = "true";
     }
@@ -108,7 +108,7 @@ function selectAnswer() {
   if (questions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove("d-none");
   } else {
-    startButton.innerText = "Restart";
+    startButton.innerHTML = "Restart";
     startButton.classList.remove("d-none");
     startButton.classList.add("btn-info");
   }
