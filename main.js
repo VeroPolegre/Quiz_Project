@@ -20,36 +20,36 @@ const questionTitle = document.getElementById("question-title");
 let currentQuestionIndex;
 
 function hideViews() {
-  homeDiv.classList.add("hidden");
-  profileDiv.classList.add("hidden");
-  questionsDiv.classList.add("hidden");
-  resultsDiv.classList.add("hidden");
-  friendsDiv.classList.add("hidden");
+  homeDiv.classList.add("d-none");
+  profileDiv.classList.add("d-none");
+  questionsDiv.classList.add("d-none");
+  resultsDiv.classList.add("d-none");
+  friendsDiv.classList.add("d-none");
 }
 
 function goHome() {
   hideViews();
-  homeDiv.classList.remove("hidden");
+  homeDiv.classList.remove("d-none");
 }
 
 function goProfile() {
   hideViews();
-  profileDiv.classList.remove("hidden");
+  profileDiv.classList.remove("d-none");
 }
 
 function goQuestions() {
   hideViews();
-  questionsDiv.classList.remove("hidden");
+  questionsDiv.classList.remove("d-none");
 }
 
 function goResults() {
   hideViews();
-  resultsDiv.classList.remove("hidden");
+  resultsDiv.classList.remove("d-none");
 }
 
 function goFriends() {
   hideViews();
-  friendsDiv.classList.remove("hidden");
+  friendsDiv.classList.remove("d-none");
 }
 
 let questions = [];
@@ -63,7 +63,7 @@ axios
   .catch((err) => console.error(err));
 
 function resetState() {
-  nextButton.classList.add("hidden");
+  nextButton.classList.add("d-none");
   answerButtons.innerHTML = "";
 }
 
@@ -104,10 +104,10 @@ function selectAnswer() {
     setStatusClass(button, button.dataset.correct === "true");
   });
   if (questions.length > currentQuestionIndex + 1) {
-    nextButton.classList.remove("hidden");
+    nextButton.classList.remove("d-none");
   } else {
     startButton.innerText = "Restart";
-    startButton.classList.remove("hidden");
+    startButton.classList.remove("d-none");
   }
 }
 function setNextQuestion() {
@@ -118,8 +118,8 @@ function setNextQuestion() {
 function startGame() {
   resetState();
   currentQuestionIndex = 0;
-  startButton.classList.add("hidden");
-  questionContainer.classList.remove("hidden");
+  startButton.classList.add("d-none");
+  questionContainer.classList.remove("d-none");
   setNextQuestion();
 }
 

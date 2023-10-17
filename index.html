@@ -11,37 +11,42 @@
     <header>
       <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Toad Kingdom Quiz</a>
+          <a class="navbar-brand" href="#">Greatest quiz in the world</a>
           <button
-            class="navbar-toggler d-lg-none"
+            class="navbar-toggler"
             type="button"
-            data-toggle="collapse"
-            data-target="#collapsibleNavId"
-            aria-controls="collapsibleNavId"
-            aria-expanded="false"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarColor01"
+            aria-controls="navbarColor01"
+            aria-expanded="true"
             aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-              <div class="collapse navbar-collapse" id="collapsibleNavId">
-                <li class="nav-item active">
-                  <span class="nav-link" id="home-nav">Home</span>
-                </li>
-                <li class="nav-item">
-                  <span class="nav-link" id="profile-nav">Profile</span>
-                </li>
-                <li class="nav-item">
-                  <span class="nav-link" id="questions-nav">Questions</span>
-                </li>
-                <li class="nav-item">
-                  <span class="nav-link" id="results-nav">Results</span>
-                </li>
-                <li class="nav-item">
-                  <span class="nav-link" id="friends-nav">Friends</span>
-                </li>
-              </div>
+          <div
+            class="navbar-collapse collapse hide"
+            id="navbarColor01"
+            style=""
+          >
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link active" id="home-nav"
+                  >Home
+                  <span class="visually-hidden">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <span class="nav-link" id="profile-nav">Profile</span>
+              </li>
+              <li class="nav-item">
+                <span class="nav-link" id="questions-nav">Questions</span>
+              </li>
+              <li class="nav-item">
+                <span class="nav-link" id="results-nav">Results</span>
+              </li>
+              <li class="nav-item">
+                <span class="nav-link" id="friends-nav">Friends</span>
+              </li>
             </ul>
             <form class="d-flex">
               <input
@@ -62,35 +67,36 @@
         <h1>Start</h1>
       </div>
 
-      <div id="profile" class="hidden">
+      <div id="profile" class="d-none">
         <h1>Profile</h1>
       </div>
 
-      <div id="questions" class="hidden">
+      <div id="questions" class="d-none">
         <h1>Questions</h1>
       </div>
 
-      <div id="results" class="hidden">
+      <div id="results" class="d-none">
         <h1>Results</h1>
       </div>
-      <div id="friends" class="hidden">
+      <div id="friends" class="d-none">
         <h1>Friends</h1>
       </div>
       <div id="question-title"></div>
-      <div id="question-container" class="hidden">
+      <div id="question-container" class="d-none">
         <div id="question-element">Question</div>
         <div id="answer-buttons"></div>
       </div>
       <div class="controls">
         <button id="start-btn">Start</button>
 
-        <button id="next-btn" class="hidden">Next</button>
+        <button id="next-btn" class="d-none">Next</button>
       </div>
     </main>
-    <!-- Bootstrap JS for Nav -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-    <!-- Axios and Main JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
   </body>
