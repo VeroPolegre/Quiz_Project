@@ -112,6 +112,7 @@ const incorrectAudio = new Audio("assets/audio/incorrect_audio.mp3");
 function setStatusClass(element) {
   if (element.dataset.correct) {
     element.classList.replace("btn-warning", "btn-success");
+    correctAudio.play();
   } else {
     element.classList.add("btn-danger");
     incorrectAudio.play();
