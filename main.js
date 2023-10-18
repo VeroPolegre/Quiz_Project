@@ -18,7 +18,7 @@ const answerButtons = document.getElementById("answer-buttons");
 
 const questionTitle = document.getElementById("question-title");
 let currentQuestionIndex;
-
+let correctAnswersCount = 0;
 function hideViews() {
   homeDiv.classList.add("d-none");
   profileDiv.classList.add("d-none");
@@ -45,6 +45,10 @@ function goQuestions() {
 function goResults() {
   hideViews();
   resultsDiv.classList.remove("d-none");
+
+  document.getElementById(
+    "results-correct-count"
+  ).textContent = `You got ${correctAnswersCount} answers right!`;
 }
 
 function goScoreboard() {
@@ -104,9 +108,17 @@ function showQuestion(question) {
 }
 
 function selectAnswer() {
+  const selectedButton = this;
+
   Array.from(answerButtons.children).forEach((button) => {
     setStatusClass(button, button.dataset.correct === "true");
+    button.disabled = true;
   });
+
+  if (selectedButton.dataset.correct === "true") {
+    correctAnswersCount++;
+  }
+
   if (questions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove("d-none");
   } else {
@@ -114,11 +126,17 @@ function selectAnswer() {
     startButton.classList.remove("d-none");
     startButton.classList.replace("btn-warning", "btn-info");
     startButton.classList.replace("btn-outline-warning", "btn-outline-info");
+    goResults();
   }
 }
+
 function setNextQuestion() {
   resetState();
-  showQuestion(questions[currentQuestionIndex]);
+  if (currentQuestionIndex === questions.length) {
+    goResults();
+  } else {
+    showQuestion(questions[currentQuestionIndex]);
+  }
 }
 
 function startGame() {
