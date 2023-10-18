@@ -42,13 +42,17 @@ function goQuestions() {
   questionsDiv.classList.remove("d-none");
 }
 
+// Inside your `goResults` function:
 function goResults() {
   hideViews();
   resultsDiv.classList.remove("d-none");
+
+  // Display the correct answers count in the "results" view.
   document.getElementById(
     "results-correct-count"
-  ).textContent = `You got ${correctAnswersCount} answers right`;
+  ).textContent = `Correct Answers: ${correctAnswersCount}`;
 
+  // Create and update the results chart.
   createResultsChart(
     correctAnswersCount,
     questions.length - correctAnswersCount
@@ -56,40 +60,30 @@ function goResults() {
 }
 
 function createResultsChart(correctCount, incorrectCount) {
-  const resultsChartCanvas = document.getElementById("results-chart");
+  const resultsChart = document.getElementById("results-chart");
 
-  if (resultsChartCanvas.chart) {
-    resultsChartCanvas.chart.destroy();
+  if (resultsChart.chart) {
+    resultsChart.chart.destroy();
   }
 
-  resultsChartCanvas.chart = new Chart(resultsChartCanvas, {
+  const data = {
+    labels: ["Correct", "Incorrect"],
+    datasets: [
+      {
+        label: "Answers",
+        backgroundColor: ["lightblue", "pink"],
+        data: [correctCount, incorrectCount],
+      },
+    ],
+  };
+
+  const config = {
     type: "doughnut",
-    data: {
-      labels: ["Correct", "Incorrect"],
-      datasets: [
-        {
-          label: "Answers",
-          data: [correctCount, incorrectCount],
-          backgroundColor: ["lightblue", "pink"],
-        },
-      ],
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true,
-          ticks: {
-            stepSize: 1,
-          },
-        },
-      },
-      plugins: {
-        legend: {
-          display: false,
-        },
-      },
-    },
-  });
+    data: data,
+    options: {},
+  };
+
+  resultsChart.chart = new Chart(resultsChart, config);
 }
 
 function goScoreboard() {
