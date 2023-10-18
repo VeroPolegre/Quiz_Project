@@ -45,10 +45,51 @@ function goQuestions() {
 function goResults() {
   hideViews();
   resultsDiv.classList.remove("d-none");
-
   document.getElementById(
     "results-correct-count"
-  ).textContent = `You got ${correctAnswersCount} answers right!`;
+  ).textContent = `You got ${correctAnswersCount} answers right`;
+
+  createResultsChart(
+    correctAnswersCount,
+    questions.length - correctAnswersCount
+  );
+}
+
+function createResultsChart(correctCount, incorrectCount) {
+  const resultsChartCanvas = document.getElementById("results-chart");
+
+  if (resultsChartCanvas.chart) {
+    resultsChartCanvas.chart.destroy();
+  }
+
+  resultsChartCanvas.chart = new Chart(resultsChartCanvas, {
+    type: "doughnut",
+    data: {
+      labels: ["Correct", "Incorrect"],
+      datasets: [
+        {
+          label: "Answers",
+          data: [correctCount, incorrectCount],
+          backgroundColor: ["lightblue", "pink"],
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            stepSize: 1,
+          },
+        },
+      },
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+    },
+  });
 }
 
 function goScoreboard() {
