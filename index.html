@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="bootstrap.css" />
     <link rel="stylesheet" href="gashina.css" />
     <link rel="stylesheet" href="gatete.css" />
+    <link rel="stylesheet" href="link.css" />
     <link
       rel="shortcut icon"
       href="./assets/img/favicon.ico"
@@ -63,22 +64,8 @@
               <span class="nav-link" id="profile-nav">Profile</span>
             </li>
           </ul>
-
-          <form class="d-flex">
-            <input
-              class="form-control me-sm-2"
-              type="search"
-              placeholder="Search"
-            />
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit">
-              Search
-            </button>
-          </form>
         </div>
       </nav>
-      <div class="scene">
-        <div class="gatete"></div>
-      </div>
     </header>
     <main>
       <section id="home" class="card border-secondary mb-3" style="width: 100%">
@@ -101,7 +88,7 @@
           </div>
         </div>
       </section>
-      <p id="gashina"></p>
+
       <div id="question-buttons" class="d-flex justify-content-center">
         <div class="controls" class="btn btn-outline-info">
           <button id="start-btn" class="btn btn-outline-warning btn-lg">
@@ -112,20 +99,29 @@
           </button>
         </div>
       </div>
-
       <section id="profile" class="d-none">
         <h1>Profile</h1>
       </section>
-
       <section id="results" class="d-none p-3">
-        <h1 style="font-size: 2em">⚡You rock!!⚡</h1>
+        <h1 style="font-size: 32px">⚡You rock!!⚡</h1>
         <h3 id="results-correct-count" class="text-info"></h3>
         <canvas id="results-chart" class="card border-dark mt-5 p-2"></canvas>
       </section>
-
+      <div class="link-container">
+        <div class="link-scene">
+          <div class="grass grass--1"></div>
+          <div class="grass grass--2"></div>
+          <div class="flower"></div>
+          <div class="link"></div>
+        </div>
+      </div>
       <section id="scoreboard" class="d-none">
         <h1>Scoreboard</h1>
       </section>
+      <p id="gashina"></p>
+      <div class="scene">
+        <div class="gatete"></div>
+      </div>
     </main>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
