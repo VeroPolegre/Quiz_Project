@@ -128,6 +128,7 @@ function showQuestion(question) {
 
 const correctAudio = new Audio("assets/audio/correct_audio.mp3");
 const incorrectAudio = new Audio("assets/audio/incorrect_audio.mp3");
+const successAudio = new Audio("assets/audio/success_audio.mp3");
 function selectAnswer() {
   const selectedButton = this;
 
@@ -152,6 +153,7 @@ function selectAnswer() {
     startButton.classList.remove("d-none");
     startButton.classList.replace("btn-warning", "btn-info");
     startButton.classList.replace("btn-outline-warning", "btn-outline-info");
+    successAudio.play();
     goResults();
   }
 }
