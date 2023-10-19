@@ -82,7 +82,7 @@ function createResultsChart(correctCount, incorrectCount) {
     datasets: [
       {
         label: "Answers",
-        backgroundColor: ["lightblue", "pink"],
+        backgroundColor: ["lightblue", "hotpink"],
         data: [correctCount, incorrectCount],
       },
     ],
