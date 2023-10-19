@@ -129,6 +129,7 @@ function showQuestion(question) {
 const correctAudio = new Audio("assets/audio/correct_audio.mp3");
 const incorrectAudio = new Audio("assets/audio/incorrect_audio.mp3");
 const successAudio = new Audio("assets/audio/success_audio.mp3");
+const ambientAudio = new Audio("assets/audio/ambient_audio.mp3");
 function selectAnswer() {
   const selectedButton = this;
 
