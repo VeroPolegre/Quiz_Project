@@ -102,19 +102,6 @@ function goScoreboard() {
   scoreboardDiv.classList.remove("d-none");
 }
 
-const correctAudio = new Audio("assets/audio/correct_audio.mp3");
-const incorrectAudio = new Audio("assets/audio/incorrect_audio.mp3");
-
-function setStatusClass(element) {
-  if (element.dataset.correct) {
-    element.classList.replace("btn-warning", "btn-success");
-    correctAudio.play();
-  } else {
-    element.classList.add("btn-danger");
-    incorrectAudio.play();
-  }
-}
-
 function showQuestion(question) {
   const questionTitle = document.getElementById("question-title");
   questionTitle.innerHTML = `Question ${currentQuestionIndex + 1}`;
@@ -139,18 +126,25 @@ function showQuestion(question) {
   });
 }
 
+const correctAudio = new Audio("assets/audio/correct_audio.mp3");
+const incorrectAudio = new Audio("assets/audio/incorrect_audio.mp3");
 function selectAnswer() {
   const selectedButton = this;
 
   Array.from(answerButtons.children).forEach((button) => {
-    setStatusClass(button, button.dataset.correct === "true");
     button.disabled = true;
   });
 
   if (selectedButton.dataset.correct === "true") {
     correctAnswersCount++;
   }
-
+  if (selectedButton.dataset.correct) {
+    selectedButton.classList.replace("btn-warning", "btn-success");
+    correctAudio.play();
+  } else {
+    selectedButton.classList.add("btn-danger");
+    incorrectAudio.play();
+  }
   if (questions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove("d-none");
   } else {
