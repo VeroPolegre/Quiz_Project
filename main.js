@@ -42,17 +42,14 @@ function goQuestions() {
   questionsDiv.classList.remove("d-none");
 }
 
-// Inside your `goResults` function:
 function goResults() {
   hideViews();
   resultsDiv.classList.remove("d-none");
 
-  // Display the correct answers count in the "results" view.
   document.getElementById(
     "results-correct-count"
-  ).textContent = `Correct Answers: ${correctAnswersCount}`;
+  ).textContent = `You got ${correctAnswersCount} answers right`;
 
-  // Create and update the results chart.
   createResultsChart(
     correctAnswersCount,
     questions.length - correctAnswersCount
