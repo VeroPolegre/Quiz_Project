@@ -19,6 +19,20 @@ const answerButtons = document.getElementById("answer-buttons");
 const questionTitle = document.getElementById("question-title");
 let currentQuestionIndex;
 let correctAnswersCount = 0;
+let questions = [];
+axios
+  .get(
+    "https://opentdb.com/api.php?amount=10&category=15&difficulty=hard&type=multiple"
+  )
+  .then((res) => {
+    questions = res.data.results;
+  })
+  .catch((err) => console.error(err));
+
+function resetState() {
+  nextButton.classList.add("d-none");
+  answerButtons.innerHTML = "";
+}
 function hideViews() {
   homeDiv.classList.add("d-none");
   profileDiv.classList.add("d-none");
@@ -86,21 +100,6 @@ function createResultsChart(correctCount, incorrectCount) {
 function goScoreboard() {
   hideViews();
   scoreboardDiv.classList.remove("d-none");
-}
-
-let questions = [];
-axios
-  .get(
-    "https://opentdb.com/api.php?amount=10&category=15&difficulty=hard&type=multiple"
-  )
-  .then((res) => {
-    questions = res.data.results;
-  })
-  .catch((err) => console.error(err));
-
-function resetState() {
-  nextButton.classList.add("d-none");
-  answerButtons.innerHTML = "";
 }
 
 const correctAudio = new Audio("assets/audio/correct_audio.mp3");
