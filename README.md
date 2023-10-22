@@ -18,7 +18,7 @@ Questions come from https://opentdb.com/
 - Progression and Restart: "Next" and the "Restart" button allows users to restart the quiz.
 - Navigation: Switch between different sections of the quiz.
 - Results Page: Distribution of correct and incorrect answers.
-- Chart Visualization: Chart.js library to create a doughnut chart to visualize quiz results.
+- Chart Visualization: A doughnut chart to visualize quiz results.
 
 ## ⚡ Objectives 
 - Dynamic manipulation of the DOM.
